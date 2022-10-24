@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf_flag_handle.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dvaisman <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/24 12:59:42 by dvaisman          #+#    #+#             */
+/*   Updated: 2022/10/24 13:20:20 by dvaisman         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-char
-	*ft_printf_flag_handle_width(t_printf_comb *bundle, char *formatted)
+char	*ft_printf_flag_handle_width(t_printf_comb *bundle, char *formatted)
 {
 	size_t	length;
 	int		required;
@@ -11,7 +22,7 @@ char
 
 	letter = ft_tolower(bundle->flags->letter);
 	if ((bundle->flags->precision_set || bundle->flags->precision_neg)
-			&& !ft_strcontain("s%", letter) && ((letter != 'x' && letter != 'o')
+		&& !ft_strcontain("s%", letter) && ((letter != 'x' && letter != 'o')
 			|| bundle->flags->precision < bundle->flags->width))
 	{
 		bundle->flags->padding_char = ' ';
@@ -38,7 +49,7 @@ char
 	char	*str;
 
 	if (bundle->flags->precision_set
-			&& bundle->flags->precision != 0 && bundle->flags->letter != 'c')
+		&& bundle->flags->precision != 0 && bundle->flags->letter != 'c')
 		bundle->flags->padding_char = ' ';
 	length = bundle->len;
 	required = bundle->flags->width - length;
@@ -59,7 +70,7 @@ char
 char
 	*ft_printf_flag_handle(t_printf_comb *bundle, char *formatted)
 {
-	char *str;
+	char	*str;
 
 	if (!bundle->flags->valid)
 		return (formatted);

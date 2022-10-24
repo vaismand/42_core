@@ -34,11 +34,12 @@ SRCS	= ft_atoi.c \
 			ft_striteri.c \
 			ft_chartostr.c \
 			ft_strndup.c \
-			ft_itoa_base_nsize.c \
+			ft_itoa_base.c \
 			ft_strcontain.c \
 			ft_chrmult.c \
 			ft_emptystr.c \
 			ft_fake_use.c \
+			ft_strjoin_free.c \
 
 SRCS_B	= ft_lstnew.c \
 		ft_lstadd_front.c \

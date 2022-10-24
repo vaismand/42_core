@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-char	*ft_print_format_char(t_printf_comb *comb)
+char	*ft_printf_format_char(t_printf_comb *comb)
 {
 	char	c;
 

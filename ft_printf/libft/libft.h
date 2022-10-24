@@ -52,6 +52,8 @@ char			*ft_strndup(const char *s1, size_t n);
 char			*ft_chrmult(char c, size_t times);
 char			*ft_strjoin_sided(char const *s1, char const *s2, int side);
 char			*ft_memjoin(void *s1, size_t l1, void *s2, size_t l2);
+char			*ft_strjoin_free(char const *s1, char const *s2, int free_flag);
+char			*ft_itoa_base(unsigned long long num, unsigned int base);
 char			*ft_chartostr(char c);
 char			*ft_emptystr(void);
 void			ft_lstadd_back(t_list **lst, t_list *new);
@@ -77,7 +79,6 @@ int				ft_toupper(int c);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 int				ft_atoi(const char *str);
 int				ft_strncmp(char *s1, char *s2, unsigned int n);
-int				ft_itoa_base_nsize(int value, int base);
 int				ft_strcontain(const char *str, char c);
 
 #endif

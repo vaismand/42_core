@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_emptystr.c                                      :+:      :+:    :+:   */
+/*   ft_printf_format_empty.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dvaisman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/24 13:09:57 by dvaisman          #+#    #+#             */
-/*   Updated: 2022/10/24 13:10:25 by dvaisman         ###   ########.fr       */
+/*   Created: 2022/10/24 14:35:06 by dvaisman          #+#    #+#             */
+/*   Updated: 2022/10/24 14:39:49 by dvaisman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_emptystr(void)
+char	*ft_printf_format_empty(t_printf_comb *bundle)
 {
-	char	*str;
-
-	str = (char *)malloc(sizeof(char));
-	if (str == NULL)
-		return (NULL);
-	str[0] = '\0';
-	return (str);
+	if (bundle->flags->precision_set)
+		bundle->flags->precision_set = 0;
+	if (bundle->flags->letter == '\0')
+		return (ft_emptystr());
+	bundle->len = 1;
+	return (ft_chartostr(bundle->flags->letter));
 }

@@ -6,7 +6,12 @@ SRCS	= ft_printf.c \
 			ft_printf_format.c \
 			ft_printf_format_char.c \
 			ft_printf_format_str.c \
+			ft_printf_format_hex.c \
+			ft_printf_format_pointer.c \
 			ft_printf_format_reg.c \
+			ft_printf_format_empty.c \
+			ft_printf_format_octal.c \
+			ft_printf_format_uint.c \
 			ft_printf_parse_flags.c \
 			ft_printf_d.c \
 			ft_printf_unit.c \
@@ -14,6 +19,7 @@ SRCS	= ft_printf.c \
 			ft_printf_flag_def.c \
 			ft_printf_flag_handle.c \
 			ft_printf_flag_validate.c \
+			ft_printf_flag_char.c \
 
 OBJS	= ${SRCS:.c=.o}
 NAME	= libftprintf.a

@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_emptystr.c                                      :+:      :+:    :+:   */
+/*   ft_printf_flag_char.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dvaisman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/24 13:09:57 by dvaisman          #+#    #+#             */
-/*   Updated: 2022/10/24 13:10:25 by dvaisman         ###   ########.fr       */
+/*   Created: 2022/10/24 13:48:32 by dvaisman          #+#    #+#             */
+/*   Updated: 2022/10/24 13:48:52 by dvaisman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "printf.h"
 
-char	*ft_emptystr(void)
+int	ft_printf_flag_char(char c)
 {
-	char	*str;
-
-	str = (char *)malloc(sizeof(char));
-	if (str == NULL)
-		return (NULL);
-	str[0] = '\0';
-	return (str);
+	if (ft_isdigit(c) || ft_strcontains("#-.* 1h", c))
+		return (1);
+	return (0);
 }

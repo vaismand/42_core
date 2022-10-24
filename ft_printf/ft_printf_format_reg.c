@@ -1,22 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf_format_reg.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dvaisman <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/24 12:55:54 by dvaisman          #+#    #+#             */
+/*   Updated: 2022/10/24 13:49:16 by dvaisman         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-char	*g_formatter_key = FT_PRINTF_SUPPORTED_FORMATS;
-char	*(*g_formatters[10])(t_printf_comb *) = {
-	&ft_printf_format_char,
-	&ft_printf_format_string,
-	&ft_printf_format_pointer,
-	&ft_printf_format_decimal,
-	&ft_printf_format_decimal,
-	&ft_printf_format_uint,
-	&ft_printf_format_hex_int,
-	&ft_printf_format_hex_int,
-	&ft_printf_format_pourcent,
-	&ft_printf_format_octal_int
-};
-
-void    *ft_printf_format_reg(char key)
+void	*ft_printf_format_reg(char key)
 {
-	size_t			index;
+	size_t	index;
 
 	index = 0;
 	while (g_formatter_key[index])

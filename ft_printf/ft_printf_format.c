@@ -1,6 +1,14 @@
-#include "ft_printf.h"
-
-#include "ft_printf.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf_format.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dvaisman <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/24 12:49:36 by dvaisman          #+#    #+#             */
+/*   Updated: 2022/10/24 12:55:46 by dvaisman         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ft_printf.h"
 
@@ -23,17 +31,18 @@ char	*ft_printf_formatter_empty(t_printf_comb *bundle)
 void	ft_printf_format(t_printf_settings *settings, size_t *index)
 {
 	t_printf_flags	flags;
-	void				*formatter;
-	size_t				start;
 	t_printf_comb	bundle;
+	void			*formatter;
+	size_t			start;
 
-	bundle = (t_printf_comb) { settings, &flags, index, -1 };
+	bundle = (t_printf_comb){settings, &flags, index, -1};
 	start = *index;
 	ft_printf_flag_def(&flags);
-	while ((flags.letter = settings->format[*index]))
+	flags.letter = settings->format[*index];
+	while (flags.letter)
 	{
 		formatter = ft_printf_format_reg(flags.letter);
-		if (formatter != NULL || !ft_printf_is_flag_char(flags.letter))
+		if (formatter != NULL || !ft_printf_flag_char(flags.letter))
 			break ;
 		*index += 1;
 	}
